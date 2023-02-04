@@ -50,6 +50,9 @@ body {
     line-height: 17px;
     color: #30529F;
 }
+.mobile-menu {
+    display: none;
+}
 .header {
     max-width: 1400px;
     margin: 0 auto;
