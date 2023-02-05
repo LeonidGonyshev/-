@@ -185,5 +185,9 @@ chooseItem.forEach((elem)=>observer.observe(elem))
 //Убираем прелоадер
 
 window.onload = function () {
-    document.body.classList.add('loaded')
+    document.body.classList.add('loaded-hiding');
+    window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded-hiding');
+    }, 500);
 }
