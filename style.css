@@ -29,6 +29,25 @@ a{
 body {
     background-color: #f5f5f5;
 }
+.previousOfPage {
+    background: #ffffff;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+.priviev {
+    margin: 0 auto;
+}
+.loaded .previousOfPage {
+    display: none;
+}
 .wrapper {
     max-width: 1137px;
     display: flex;
@@ -325,7 +344,25 @@ body {
     justify-content: space-between;
 }
 .choose-item {
+    position: relative;
     width: 30%;
+}
+.choose-animation {
+    animation-name: choose-items;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+@keyframes choose-items {
+    0% {
+        left: 20%;
+    }
+    50% {
+        left: 10%;
+    }
+    100% {
+        left: 0;
+    }
 }
 .choose-name {
     font-weight: 700;

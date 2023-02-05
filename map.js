@@ -1823,25 +1823,12 @@ let coords = [];
         let a = coords[i].split(',');
         sortCoords.push([Number(a[0]),Number(a[1])])
     }
-    console.log(sortCoords[0]);
 
 function init() {
     let map = new ymaps.Map('map', {
         center: [63.454991175424865,99.06464825110648],
         zoom: 3
     })
-    // let placemark1 = new ymaps.Placemark(sortCoords[0],{},{
-    //     iconLayout: 'default#image',
-    //     iconImageHref: 'img/mapMark.svg',
-    //     iconImageSize: [45, 52],
-    //     iconImageOffset: [-20, -42]
-    // })
-    // let placemark2 = new ymaps.Placemark([52.02758457207355,113.48271449999994],{},{
-    //     iconLayout: 'default#image',
-    //     iconImageHref: 'img/mapMark.svg',
-    //     iconImageSize: [45, 52],
-    //     iconImageOffset: [-20, -42]
-    // })
     
 
   map.controls.remove('geolocationControl'); // удаляем геолокацию

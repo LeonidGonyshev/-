@@ -112,7 +112,6 @@ const chooseDot6 = document.querySelector('#choose-6');
 
 let choosePosition = 0;
 let choseWidth = chooseItem[0].offsetWidth + 10
-console.log(choseWidth);
 
 chooseDot1.addEventListener('click', ()=>{
     chooseDots.forEach((item)=>{
@@ -168,3 +167,23 @@ chooseDot6.addEventListener('click', ()=>{
         item.style.left = -choseWidth * 5  + 'px'
     })
 })
+
+//Анимация при попадании во вьюпорт
+const callback = (entries, observer)=>{
+    entries.forEach((item)=>{
+        if (item.isIntersecting) {
+            item.target.classList.add('choose-animation');
+        }
+        if (!item.isIntersecting) {
+            item.target.classList.remove('choose-animation');
+        }
+    })
+}
+const observer = new IntersectionObserver(callback)
+chooseItem.forEach((elem)=>observer.observe(elem))
+
+//Убираем прелоадер
+
+window.onload = function () {
+    document.body.classList.add('loaded')
+}
