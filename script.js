@@ -6,6 +6,9 @@ let slidePosition = 0;
 
 rightBtn.addEventListener('click', ()=> {
     slidePosition += slide[0].offsetWidth;
+    if (slidePosition > 7959){
+        slidePosition = 0
+    }
     slide.forEach((item)=>{
         item.style.left = -slidePosition + 'px'
     })
@@ -13,6 +16,9 @@ rightBtn.addEventListener('click', ()=> {
 
 leftBtn.addEventListener('click', ()=> {
     slidePosition -= slide[0].offsetWidth
+    if (slidePosition < 0){
+        slidePosition = 7959
+    }
     slide.forEach((item)=>{
         item.style.left = -slidePosition + 'px'
     })
